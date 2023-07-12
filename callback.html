@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter OAuth Callback</title>
+</head>
+<body>
+  <h1>Twitter OAuth Callback</h1>
+  <script>
+    // Parsear los parámetros de la URL
+    function getQueryParams() {
+      var params = {};
+      window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+        params[key] = decodeURIComponent(value);
+      });
+      return params;
+    }
+
+    // Obtener los parámetros de la URL
+    var queryParams = getQueryParams();
+
+    // Enviar los parámetros de vuelta al servidor
+    // Aquí puedes implementar tu lógica para manejar la respuesta de Twitter,
+    // por ejemplo, guardar los tokens de acceso en tu base de datos o realizar
+    // cualquier otra acción necesaria.
+    // queryParams contiene los parámetros enviados por Twitter, como 'oauth_token', 'oauth_verifier', etc.
+    // Puedes utilizarlos según tus necesidades.
+    // Asegúrate de proteger adecuadamente esta página y los datos que recibes.
+
+    // Redirigir a una página de confirmación o éxito
+    window.location.href = "https://www.ejemplo.com/confirmacion.html";
+  </script>
+</body>
+</html>
